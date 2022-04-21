@@ -10,16 +10,26 @@ import random
 def main():
     # this function shows formatting output
 
+    counter = 0
     # input
-    number_from_user = int(input("Enter a number between 0-9: "))
-    random_number = random.randint(1, 9)
+    random_number = random.randint(0, 9)
     # process & output
     print("")
-    if number_from_user == random_number:
-        print("You guessed correctly!")
-    else:
-        print("You guessed incorrectly!")
-    print("\nDone.")
+    while True:
+        try:
+            number_from_user = int(input("Enter a number between 0-9: "))
+            counter = counter + 1
+            if number_from_user == random_number:
+                print("\nYou guessed correctly in {0} times!".format(counter))
+                break
+            elif random_number > number_from_user:
+                print("\nNext time guess higher")
+            elif random_number < number_from_user:
+                print("\nNext time guess lower")
+        except Exception:
+            print("\nThat is not an integer, guess again.")
+        finally:
+            print("")
 
 
 if __name__ == "__main__":
