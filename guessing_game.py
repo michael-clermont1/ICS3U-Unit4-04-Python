@@ -14,7 +14,6 @@ def main():
     # input
     random_number = random.randint(0, 9)
     # process & output
-    print("")
     while True:
         try:
             number_from_user = int(input("Enter a number between 0-9: "))
